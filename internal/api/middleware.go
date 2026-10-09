@@ -25,7 +25,7 @@ func Logging(next http.Handler) http.Handler {
 	})
 }
 
-// CORS добавляет allow-заголовки и отвечает на preflight OPTIONS (зв.1).
+// CORS добавляет allow-заголовки и отвечает на preflight OPTIONS
 // Ставится перед mux, чтобы заголовки попали в ответ до WriteHeader.
 func CORS(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

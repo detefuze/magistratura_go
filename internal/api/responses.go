@@ -27,12 +27,12 @@ func Internal(w http.ResponseWriter, msg string) {
 	JSON(w, http.StatusInternalServerError, ErrorResponse{Error: msg})
 }
 
-// UnprocessableEntity — 422 для невалидных данных (зв.2).
+// UnprocessableEntity — 422 для невалидных данных
 func UnprocessableEntity(w http.ResponseWriter, msg string) {
 	JSON(w, http.StatusUnprocessableEntity, ErrorResponse{Error: msg})
 }
 
-// NoContent — 204 без тела, для успешного DELETE (зв.4).
+// NoContent — 204 без тела, для успешного DELETE
 func NoContent(w http.ResponseWriter) {
 	w.WriteHeader(http.StatusNoContent)
 }

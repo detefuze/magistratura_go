@@ -44,7 +44,7 @@ func (s *MemoryStore) Get(id int64) (*Task, error) {
 	return t, nil
 }
 
-// SetDone меняет флаг Done под write-локом (зв.3).
+// SetDone меняет флаг Done под write-локом
 // Возвращает ErrNotFound, если задачи с таким id нет.
 func (s *MemoryStore) SetDone(id int64, done bool) (*Task, error) {
 	s.mu.Lock()
@@ -57,7 +57,7 @@ func (s *MemoryStore) SetDone(id int64, done bool) (*Task, error) {
 	return t, nil
 }
 
-// Delete удаляет задачу под write-локом (зв.4).
+// Delete удаляет задачу под write-локом
 func (s *MemoryStore) Delete(id int64) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
